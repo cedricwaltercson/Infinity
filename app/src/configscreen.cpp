@@ -92,9 +92,10 @@ ConfigScreen::ConfigScreen(ViewManager* viewManager)
         m_libconfigStatus = "Installed modules";
 
         std::string basejson =
-            "[{\"name\":\"PRO "
-            "CFW\",\"author\":\"Coldbird\",\"path\":\"flash0:/kd/procompat.bin\"},{\"name\":\"ME "
-            "CFW\",\"author\":\"neur0n\",\"path\":\"flash0:/kd/mecompat.bin\"}]";
+			"[{\"name\":\"PRO-BASED VARIANTS "
+            "CFW\",\"path\":\"flash0:/kd/procompat.bin\"},"
+			"{\"name\":\"ME "
+            "CFW\",\"path\":\"flash0:/kd/mecompat.bin\"}]";
         auto list = parseCompatibilityConfig(basejson);
         m_list.insert(m_list.begin(), list.begin(), list.end());
 
@@ -108,11 +109,11 @@ ConfigScreen::ConfigScreen(ViewManager* viewManager)
         {
             if (isEnabledModule && enabledModule == m_list[i]->path())
             {
-                m_menu.addItem("* " + m_list[i]->name() + " by " + m_list[i]->author());
+                m_menu.addItem("* " + m_list[i]->name());
             }
             else
             {
-                m_menu.addItem(m_list[i]->name() + " by " + m_list[i]->author());
+                m_menu.addItem(m_list[i]->name());
             }
         }
     }
@@ -182,11 +183,11 @@ void ConfigScreen::onEvent(Event* event)
     {
         if (isEnabledModule && enabledModule == m_list[i]->path())
         {
-            m_menu.addItem("* " + m_list[i]->name() + " by " + m_list[i]->author());
+            m_menu.addItem("* " + m_list[i]->name());
         }
         else
         {
-            m_menu.addItem(m_list[i]->name() + " by " + m_list[i]->author());
+            m_menu.addItem(m_list[i]->name());
         }
     }
 }
