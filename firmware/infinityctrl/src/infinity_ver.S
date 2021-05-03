@@ -37,7 +37,7 @@ loop:
 lhu $v1, 0($v0)
 bnez $v1, loop
 addiu $v0, $v0, 2
-addu $v1, $0, 0x221E
+addu $v1, $0, 0x00
 lhu $t0, -4($v0)
 beql $v1, $t0, exit
 addu $t0, $0, $t0
