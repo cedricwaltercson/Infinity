@@ -92,7 +92,7 @@ ConfigScreen::ConfigScreen(ViewManager* viewManager)
         m_libconfigStatus = "Installed modules";
 
         std::string basejson =
-			"[{\"name\":\"PRO-BASED VARIANTS "
+			"[{\"name\":\"PRO-BASED "
             "CFW\",\"path\":\"flash0:/kd/procompat.bin\"},"
 			"{\"name\":\"ME "
             "CFW\",\"path\":\"flash0:/kd/mecompat.bin\"}]";
